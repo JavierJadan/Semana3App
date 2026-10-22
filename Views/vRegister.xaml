@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Semana3App.Views.vRegister">
+    <ContentPage.Content>
+        <VerticalStackLayout
+         Padding="15" 
+         Spacing="15"
+            >
+            
+            <Label
+                Text="Registrar Usuario"
+                FontSize="20"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                />
+            <Entry
+                x:Name="txtUsuarioNuevo"
+                Placeholder="Ingresa el nuevo usuario">
+            </Entry>
+            <Entry
+                x:Name="txtContrasenaNueva" 
+                Placeholder="Ingresar la contraseña">
+            </Entry>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                
+                <Button
+                    x:Name="btnGuardarUsuario"
+                    Text="Guardar Usuario"
+                    Clicked="BtnGuardarUsuario_OnClicked"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    ></Button>
+                <Button
+                    x:Name="btnCancelar"
+                    Text="Cancelar"
+                    Clicked="BtnCancelar_OnClicked"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                ></Button>
+                
+            </Grid>
+            
+        </VerticalStackLayout>
+    </ContentPage.Content>
+</ContentPage>

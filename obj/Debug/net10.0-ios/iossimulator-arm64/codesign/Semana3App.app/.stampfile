@@ -1,0 +1,1 @@
+-v --force --timestamp=none --sign - --entitlements /Users/John/Documents/JavierJadan/Uisrael/SEPTIMO/APPS/Semana3App/Semana3App/obj/Debug/net10.0-ios/iossimulator-arm64/Entitlements.xcent /Users/John/Documents/JavierJadan/Uisrael/SEPTIMO/APPS/Semana3App/Semana3App/bin/Debug/net10.0-ios/iossimulator-arm64/Semana3App.app

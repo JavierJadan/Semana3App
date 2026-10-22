@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Semana3App.Views.vLogin">
+   
+        
+        <ContentPage.Resources>
+            <Style x:Key="styleLabel" TargetType="Label">
+                <Setter
+                    Property="FontSize" Value="18">
+                </Setter>
+                <Setter
+                    Property="TextColor" Value="Blue">
+                </Setter>
+                <Setter
+                    Property="HorizontalTextAlignment" Value="Center">
+                </Setter>
+            </Style>   
+            <Style x:Key="styleEntry" TargetType="Entry">
+                <Setter
+                    Property="Background" Value="Blue">
+                </Setter>
+                <Setter
+                    Property="FontSize" Value="16">
+                </Setter>
+                
+            </Style>
+            
+            
+        </ContentPage.Resources>
+    <ContentPage.Content>
+        <VerticalStackLayout>
+        <Label
+            Text="Inicio de Sesión"
+            FontSize="20"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"/>
+        <Image
+            Source="https://png.pngtree.com/png-vector/20241210/ourmid/pngtree-user-profile-login-icon-in-silver-color-access-authentication-vector-png-image_14688836.png"
+            WidthRequest="150"
+        />
+        
+           <Grid RowSpacing="20"
+                  ColumnSpacing="12">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- usuario -->
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Style="{StaticResource styleLabel}"
+                    Text="Usuario:"
+                    VerticalOptions="Center" />
+
+                <Entry
+                    x:Name="txtUsuario"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Placeholder="Ingrese su usuario" />
+
+                <!--contraseña -->
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Text="Contraseña:"
+                    FontSize="18"
+                    VerticalOptions="Center" />
+
+                <Entry
+                    x:Name="txtPassword"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Placeholder="Ingrese su contraseña"
+                    IsPassword="True" />
+
+                <!--botones-->
+                <Grid
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    ColumnDefinitions="*,*"
+                    ColumnSpacing="12">
+
+                    <Button
+                        x:Name="btnIniciar"
+                        Grid.Column="0"
+                        Clicked="BtnIniciar_OnClicked"
+                        Text="Iniciar sesión" />
+
+                    <Button
+                        x:Name="btnRegistrar"
+                        Clicked="BtnRegistrar_OnClicked"
+                        Grid.Column="1"
+                        Text="Registrarse" />
+
+                </Grid>
+
+            </Grid>
+        </VerticalStackLayout>
+    </ContentPage.Content>
+</ContentPage>
