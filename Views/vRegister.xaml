@@ -2,53 +2,98 @@
 
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Semana3App.Views.vRegister">
+             x:Class="Semana3App.Views.vRegister"
+             Title="Registro">
+
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="TextColor" Value="DarkBlue" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+        </Style>
+
+        <Style TargetType="Entry">
+            <Setter Property="BackgroundColor" Value="#EAF2FF" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="TextColor" Value="#1F2937" />
+            <Setter Property="PlaceholderColor" Value="#6B7280" />
+            <Setter Property="HeightRequest" Value="48" />
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="CornerRadius" Value="8" />
+            <Setter Property="HeightRequest" Value="48" />
+        </Style>
+
+        <Style x:Key="styleGuardar" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="DarkBlue" />
+            <Setter Property="TextColor" Value="White" />
+        </Style>
+
+        <Style x:Key="styleCancelar" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#D1D5DB" />
+            <Setter Property="TextColor" Value="#1F2937" />
+        </Style>
+    </ContentPage.Resources>
+
     <ContentPage.Content>
         <VerticalStackLayout
-         Padding="15" 
-         Spacing="15"
-            >
-            
+            Padding="24"
+            Spacing="18">
+
             <Label
                 Text="Registrar Usuario"
-                FontSize="20"
-                VerticalOptions="Center"
-                HorizontalOptions="Center"
-                />
-            <Entry
-                x:Name="txtUsuarioNuevo"
-                Placeholder="Ingresa el nuevo usuario">
-            </Entry>
-            <Entry
-                x:Name="txtContrasenaNueva" 
-                Placeholder="Ingresar la contraseña">
-            </Entry>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition></RowDefinition>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-                
-                <Button
-                    x:Name="btnGuardarUsuario"
-                    Text="Guardar Usuario"
-                    Clicked="BtnGuardarUsuario_OnClicked"
+                FontSize="24"
+                FontAttributes="Bold"
+                HorizontalTextAlignment="Center" />
+
+            <Grid
+                RowDefinitions="Auto,Auto"
+                ColumnDefinitions="Auto,*"
+                RowSpacing="16"
+                ColumnSpacing="12">
+
+                <Label
                     Grid.Row="0"
                     Grid.Column="0"
-                    ></Button>
-                <Button
-                    x:Name="btnCancelar"
-                    Text="Cancelar"
-                    Clicked="BtnCancelar_OnClicked"
+                    Text="Usuario:" />
+
+                <Entry
+                    x:Name="txtUsuarioNuevo"
                     Grid.Row="0"
                     Grid.Column="1"
-                ></Button>
-                
+                    Placeholder="Ingrese el nuevo usuario" />
+
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Text="Contraseña:" />
+
+                <Entry
+                    x:Name="txtContrasenaNueva"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Placeholder="Ingrese la contraseña"
+                    IsPassword="True" />
             </Grid>
-            
+
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+                <Button
+                    x:Name="btnGuardarUsuario"
+                    Grid.Column="0"
+                    Text="Guardar usuario"
+                    Style="{StaticResource styleGuardar}"
+                    Clicked="BtnGuardarUsuario_OnClicked" />
+
+                <Button
+                    x:Name="btnCancelar"
+                    Grid.Column="1"
+                    Text="Cancelar"
+                    Style="{StaticResource styleCancelar}"
+                    Clicked="BtnCancelar_OnClicked" />
+            </Grid>
+
         </VerticalStackLayout>
     </ContentPage.Content>
 </ContentPage>

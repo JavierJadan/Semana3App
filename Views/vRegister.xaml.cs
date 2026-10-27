@@ -15,16 +15,24 @@ public partial class vRegister : ContentPage
 
     private async void BtnGuardarUsuario_OnClicked(object? sender, EventArgs e)
     {
-        string usuarioNuevo = txtUsuarioNuevo.Text;
-        string contrasenaNueva = txtContrasenaNueva.Text;
-        
-        await Navigation.PushAsync(new Views.vLogin(usuarioNuevo, contrasenaNueva));
-        await DisplayAlertAsync("Alerta", "Usuario guardado correctamente", "Cerrar");
+        string usuarioNuevo = txtUsuarioNuevo.Text?.Trim() ?? string.Empty;
+        string contrasenaNueva = txtContrasenaNueva.Text ?? string.Empty;
+
+        if (string.IsNullOrWhiteSpace(usuarioNuevo) || string.IsNullOrWhiteSpace(contrasenaNueva))
+        {
+            await DisplayAlertAsync("Datos incompletos", "Ingrese el usuario y la contraseña.", "Cerrar");
+            return;
+        }
+
+        await DisplayAlertAsync("Registro", "Usuario guardado correctamente.", "Continuar");
+
+        // Los datos se envían a vLogin mediante su constructor.
+        await Navigation.PushAsync(new vLogin(usuarioNuevo, contrasenaNueva));
 
     }
 
     private async void BtnCancelar_OnClicked(object? sender, EventArgs e)
     {
-        await Navigation.PushAsync(new Views.vLogin());
+        await Navigation.PopAsync();
     }
 }

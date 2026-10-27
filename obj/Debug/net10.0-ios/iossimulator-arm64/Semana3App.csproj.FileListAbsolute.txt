@@ -316,3 +316,4 @@
 /Users/John/Documents/JavierJadan/Uisrael/SEPTIMO/APPS/Semana3App/Semana3App/obj/Debug/net10.0-ios/iossimulator-arm64/Semana3App.pdb
 /Users/John/Documents/JavierJadan/Uisrael/SEPTIMO/APPS/Semana3App/Semana3App/obj/Debug/net10.0-ios/iossimulator-arm64/Semana3App.genruntimeconfig.cache
 /Users/John/Documents/JavierJadan/Uisrael/SEPTIMO/APPS/Semana3App/Semana3App/obj/Debug/net10.0-ios/iossimulator-arm64/ref/Semana3App.dll
+/Users/John/Documents/JavierJadan/Uisrael/SEPTIMO/APPS/Semana3App/Semana3App/obj/Debug/net10.0-ios/iossimulator-arm64/Semana3App.sourcelink.json
